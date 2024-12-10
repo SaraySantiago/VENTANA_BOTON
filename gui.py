@@ -51,6 +51,8 @@ if __name__ == "__main__":
     # Crear un botón que llama a la función calcular_siguiente
     boton = tk.Button(ventana, text="Calcular", command=calcular_siguiente)
     boton.pack(pady=5)
+    boton = tk.Button(ventana, text="Exit", command=quit)
+    boton.pack(pady=5)
 
     # Crear una etiqueta para mostrar el resultado
     resultado = tk.Label(ventana, text="")
