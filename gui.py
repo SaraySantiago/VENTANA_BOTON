@@ -28,7 +28,7 @@ def calcular_siguiente():
 
         if i in ["bye", "exit", "quit"]:
             ventana.destroy()
-        elif i in ["help",]:
+        elif i in ["help"]:
             resultado.config(text=textHelp())
         else:
             numero = int(i)
@@ -47,7 +47,7 @@ if __name__ == "__main__":
     # Crear un cuadro de entrada
     entrada = tk.Entry(ventana)
     entrada.pack(pady=10)
-
+    entrada.focus()
     # Crear un botón que llama a la función calcular_siguiente
     boton = tk.Button(ventana, text="Calcular", command=calcular_siguiente)
     boton.pack(pady=5)
@@ -57,5 +57,5 @@ if __name__ == "__main__":
     resultado.pack(pady=10)
 
     # Ejecutar el bucle principal de Tkinter
+    ventana.bind("<Return>", lambda event: calcular_siguiente())
     ventana.mainloop()
-
